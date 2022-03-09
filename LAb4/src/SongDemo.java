@@ -23,7 +23,7 @@ public class SongDemo {
 
         //  Sort //
         Sort(songs);
-        SortRecord();
+        SortRecord(songsRec);
     }
 
     private  void  Sort(Song[] songs){
@@ -40,20 +40,27 @@ public class SongDemo {
 
     private void SortRecord(SongRecord[] songs){
         // by title
-        Arrays.sort(songs);
-        PrintAll(songs, "by title");
+        Arrays.sort(songsRec);
+        PrintAllRecord(songsRec, "by title");
         // by year
-        Arrays.sort(songs, new YearComparator());
-        PrintAll(songs,"by year");
+        Arrays.sort(songsRec, new YearComparatorRecord());
+        PrintAllRecord(songsRec,"by year");
         //by Singer
-        Arrays.sort(songs, new SingerComparator());
-        PrintAll(songs,"by Singer");
+        Arrays.sort(songsRec, new SingerComparatorRecords());
+        PrintAllRecord(songsRec,"by Singer");
     }
 
     class YearComparator implements Comparator<Song> {
         @Override
         public int compare(Song o1, Song o2) {
             return o1.getYear() - o2.getYear();
+        }
+    }
+
+    class YearComparatorRecord implements Comparator<SongRecord> {
+        @Override
+        public int compare(SongRecord o1, SongRecord o2) {
+            return o1.year() - o2.year();
         }
     }
 
@@ -64,9 +71,23 @@ public class SongDemo {
         }
     }
 
+    class SingerComparatorRecords implements Comparator<SongRecord> {
+        @Override
+        public int compare(SongRecord o1, SongRecord o2) {
+            return o1.singer().getName().compareTo(o2.singer().getName());
+        }
+    }
+
     private void PrintAll(Song[] songs, String howToCompare){
         System.out.println(howToCompare);
         for (Song song: songs) {
+            System.out.println(song.toString());
+        }
+    }
+
+    private void PrintAllRecord(SongRecord[] songs, String howToCompare){
+        System.out.println(howToCompare);
+        for (SongRecord song: songs) {
             System.out.println(song.toString());
         }
     }
