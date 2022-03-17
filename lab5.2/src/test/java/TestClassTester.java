@@ -34,8 +34,9 @@ public class TestClassTester {
             testCountOfNotBinaryes(testArray[i],testAnswers[i]);
         }
     }
+
     @Test
-    public void testIsContainsDigit() throws Exception {
+    public void testBiggestStringOfTwo() throws Exception {
         String[] testStrings = new String[]{
                 "string 1",
                 "test string",

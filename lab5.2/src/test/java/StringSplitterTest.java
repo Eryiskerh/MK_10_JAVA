@@ -5,9 +5,9 @@ import org.junit.Test;
 public class StringSplitterTest {
     @Test
     public void testStringSplitter(){
-        String input="this is just simple string splitter";
+        String input="My brother Andy is a very laaazy boy";
         String[] output=new String[]{
-                "this","is","just","simple","string","splitter"
+                "My","brother","Andy","is","a","very","laaazy","boy"
         };
         Assert.assertArrayEquals(output, StringSplitter.Split(input));
     }

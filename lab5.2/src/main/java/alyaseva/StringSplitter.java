@@ -7,7 +7,7 @@ public class StringSplitter {
 
     }
     public static String[] Split(String arg){
-        final int maxWords= 100;
+        final int maxWords = 100;
         String[] splitWords = new String[maxWords];       // splitted sentence
         StringBuilder word = new StringBuilder();           // splitted word in char[]
         int countWords = 0;                                 // count of words in sentence
