@@ -51,7 +51,7 @@ public class Song implements Comparable<Song> {
 
     @Override
     public String toString() {
-        return String.format("title: %s, year: %d, singer: %s\n", title, year, singer.getName());
+        return String.format("title: %s, year: %d, singer: %s", title, year, singer.getName());
     }
 
     @Override
